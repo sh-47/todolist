@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="app">
+        <header class="header">
+            <div class="brand">
+                <div class="logo">✓</div>
+                <span>TaskFlow</span>
+            </div>
+            <span class="badge">MY PLANNER</span>
+        </header>
+
+        <section class="welcome">
+            <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+            <h1>Plan your day<span>.</span></h1>
+            <p class="subtitle">Small steps. Big achievements.</p>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-icon">📋</span>
+                <div>
+                    <p>Total Tasks</p>
+                    <h2 id="totalCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">⏳</span>
+                <div>
+                    <p>Remaining</p>
+                    <h2 id="activeCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">🎯</span>
+                <div>
+                    <p>Completed</p>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <div class="progress-label">
+                <span>Daily progress</span>
+                <strong id="progressText">0%</strong>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </section>
+
+        <section class="task-section">
+            <h2 class="section-title">Add a new task</h2>
+
+            <form id="taskForm" class="task-form">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    maxlength="150"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="submitBtn">+ Add Task</button>
+            </form>
+
+            <p id="message" class="message" role="status"></p>
+
+            <div class="task-toolbar">
+                <h2 class="section-title">My Tasks</h2>
+
+                <div class="filters">
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="active">Active</button>
+                    <button class="filter" data-filter="completed">Done</button>
+                </div>
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">✦</div>
+                <h3 id="emptyTitle">Your space is clear!</h3>
+                <p id="emptyText">Add your first task to get started.</p>
+            </div>
+
+            <div class="bottom-bar">
+                <span id="footerCount">0 tasks left</span>
+                <button id="clearCompleted" class="clear-btn">
+                    Clear completed
+                </button>
+            </div>
+        </section>
+
+        <footer>
+            <span>TaskFlow</span> · Stay focused. Get things done.
+        </footer>
+    </main>
+
+</body>
+</html>
